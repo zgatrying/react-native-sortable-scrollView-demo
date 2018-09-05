@@ -333,7 +333,6 @@ class SortContainer extends Component {
 
   _getTouchCell(touchCoordinate) {
     let columnWidth = this._columnWidth;
-    console.log(this._cells)
     for (const cell of this._cells) {
       if(Utils.isPointInPath({
         touchCoordinate,

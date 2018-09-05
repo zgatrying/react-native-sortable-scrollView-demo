@@ -22,7 +22,7 @@ export default class GridCell extends Component {
         x,
         y
       }),
-      spinValue: new Animated.Value(spinValues.middle),
+      // spinValue: new Animated.Value(spinValues.middle),
       scale: new Animated.Value(1),
       zIndex: 0,
       visible: true
@@ -31,17 +31,13 @@ export default class GridCell extends Component {
     this._translationAnimationInstance = null;
   }
 
-  componentDidMount() {
-    // this.startSpinAnimation()
-  }
-
   render() {
     let {columnWidth, clumnHeight, data, index,} = this.props;
     let {x, y,} = this.state.coordinate;
-    const spinValue = this.state.spinValue.interpolate({
-      inputRange: [spinValues.min, spinValues.max],
-      outputRange: ['-3deg', '3deg']
-    })
+    // const spinValue = this.state.spinValue.interpolate({
+    //   inputRange: [spinValues.min, spinValues.max],
+    //   outputRange: ['-3deg', '3deg']
+    // })
     return (
       this.state.visible ?
         <Animated.View
@@ -54,7 +50,10 @@ export default class GridCell extends Component {
             borderColor: '#789911',
             zIndex: this.state.zIndex, 
             left: x, top: y, 
-            transform: [ { scale: this.state.scale}, {rotate: spinValue} ], 
+            transform: [ 
+              { scale: this.state.scale}, 
+              // {rotate: spinValue} 
+            ], 
           }}
         >
           {this.props.renderCell(data, this)}
@@ -100,28 +99,28 @@ export default class GridCell extends Component {
     })
   }
 
-  startSpinAnimation = () => {
-    let getTargetValue = (value) => {
-      return value === spinValues.min ? spinValues.max : spinValues.min
-    }
-    this._spinAnimationInstance = Animated.timing(
-      this.state.spinValue,
-      {
-        toValue: getTargetValue(this.state.spinValue._value),
-        duration: 100
-      }
-    )
-    this._spinAnimationInstance.start((o) => {
-      if(o.finished) {
-        this.startSpinAnimation()
-      }
-    })
-  }
+  // startSpinAnimation = () => {
+  //   let getTargetValue = (value) => {
+  //     return value === spinValues.min ? spinValues.max : spinValues.min
+  //   }
+  //   this._spinAnimationInstance = Animated.timing(
+  //     this.state.spinValue,
+  //     {
+  //       toValue: getTargetValue(this.state.spinValue._value),
+  //       duration: 100
+  //     }
+  //   )
+  //   this._spinAnimationInstance.start((o) => {
+  //     if(o.finished) {
+  //       this.startSpinAnimation()
+  //     }
+  //   })
+  // }
 
-  stopScaleAnmation = () => {
-    this._spinAnimationInstance.stop()
-    this._spinAnimationInstance = null
-  }
+  // stopSpinAnmation = () => {
+  //   this._spinAnimationInstance.stop()
+  //   this._spinAnimationInstance = null
+  // }
 
   getTranslationAnimation = ({ animationType, coordinate, }) => {
     let { columnWidth} = this.props

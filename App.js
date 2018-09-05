@@ -21,7 +21,6 @@ export default class App extends Component {
     }
     this.state = {
       list,
-      isAtSpin: false,
       showControl: true
     }
   }
@@ -40,7 +39,7 @@ export default class App extends Component {
           dataSource={this.state.list}
           columnWidth={60}
           rowHeight={60}
-          sortable={!this.state.isAtSpin}
+          sortable={true}
           renderCell={this.renderCell}
         />
       </View>

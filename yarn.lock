@@ -4194,13 +4194,7 @@ react-is@^16.4.1:
   version "16.4.2"
   resolved "http://registry.npm.taobao.org/react-is/download/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
 
-react-native-smart-sortable-sudoku-grid@^1.0.5:
-  version "1.0.5"
-  resolved "http://registry.npm.taobao.org/react-native-smart-sortable-sudoku-grid/download/react-native-smart-sortable-sudoku-grid-1.0.5.tgz#8c6421d6d443a99491ce7ddcfb278fa8ba2815bd"
-  dependencies:
-    react-native-smart-timer-enhance "^1.0.2"
-
-react-native-smart-timer-enhance@^1.0.2:
+react-native-smart-timer-enhance@^1.0.3:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/react-native-smart-timer-enhance/download/react-native-smart-timer-enhance-1.0.3.tgz#47ddc19be5a6c19184449039495f25546bcd94fe"
 
